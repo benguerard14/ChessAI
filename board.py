@@ -17,7 +17,7 @@ normal_setup = ["r", "n", "b", "q", "k", "b", "n", "r",
                 "P", "P", "P", "P", "P", "P", "P", "P",
                 "R", "N", "B", "Q", "K", "B", "N", "R"]
 
-def string_to_class(board):
+def initialize_board(board):
     class_board = [] 
     for i in range(64):
         class_board.append(assign_piece(board[i], i))

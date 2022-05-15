@@ -1,4 +1,3 @@
-from ctypes import resize
 from Pieces.pawn import * 
 from Pieces.rook import *
 from Pieces.bishop import *
@@ -10,7 +9,7 @@ import numpy as np
 
 
 def main():
-    board = string_to_class(normal_setup)
+    board = initialize_board(normal_setup)
     pawn = board[10]
     pawn.move_piece(board, 18)
     pawn = board[54]
