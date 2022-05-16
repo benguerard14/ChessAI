@@ -10,13 +10,9 @@ import numpy as np
 
 def main():
     board = initialize_board(normal_setup)
-    pawn = board[10]
-    pawn.move_piece(board, 26)
-    pawn1 = board[51]
-    print(pawn.get_moves(board))
-    pawn1.move_piece(board, 35)
-    print(pawn.get_moves(board))
-    print_board(board)
+    bishop = board[2] 
+    print(bishop)
+    print(bishop.get_moves(board))
 
 if __name__ == "__main__":
     main()
