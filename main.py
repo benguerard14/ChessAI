@@ -1,10 +1,11 @@
-import Chess as chess
+import Chess as cs 
 import numpy as np
 
 
 def main():
-    board = chess.initialize_board(chess.normal_setup)
-    rook = board[0] 
+    board = cs.initialize_board(cs.normal_setup)
+    rook = board[29] 
+    cs.print_board(board) 
     print(rook.get_moves(board))
 
 if __name__ == "__main__":

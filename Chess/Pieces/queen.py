@@ -16,10 +16,8 @@ class Queen(Piece):
                 move = self.position + i * direction
                 if (not self.is_same_diagonal(move, i) and direction % 2 == 1) or move < 0:
                     break
-                if (self.is_same_x or self.is_same_y) and direction % 2 == 0:
+                if not (self.is_same_y or (direction != 1 or direction != -1)) and direction % 2 == 0:
                     break
-                if move  < 0:
-                    continue
                 if board[self.position + i * direction] is None:
                     valid_moves.append(move)
                 elif board[self.position + i * direction].color != self.color:
