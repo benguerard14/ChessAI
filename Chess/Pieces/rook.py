@@ -13,14 +13,13 @@ class Rook(Piece):
         for direction in directions:
             for i in range(1, 8):
                 move = self.position + i * direction
-                if self.position % 8 == move % 8 or self.position // 8 == move // 8:
-                    if move  < 0:
-                        continue
-                    if board[self.position + i * direction] is None:
-                        valid_moves.append(move)
-                    elif board[self.position + i * direction].color != self.color:
-                        valid_moves.append(move)
-                        break
-                    else:
-                        break
+                if not (self.is_same_x(move) or self.is_same_y(move)) or move < 0: 
+                    break
+                if board[self.position + i * direction] is None:
+                    valid_moves.append(move)
+                elif board[self.position + i * direction].color != self.color:
+                    valid_moves.append(move)
+                    break
+                else:
+                    break
         return valid_moves

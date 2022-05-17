@@ -12,9 +12,13 @@ class Piece(ABC):
     def get_moves(self):
         pass
     
-    def is_color(self, piece):
-        return self.color == piece.color
-    
+    def is_same_x(self, move):
+        return self.position % 8 == move % 8
+    def is_same_y(self, move):
+        return self.position // 8 == move // 8
+    def is_same_diagonal(self, move, i):
+        return not ((move % 8) + i  != self.position % 8 and (move % 8) - i != self.position % 8)
+
     def move_piece(self, board, move):
         if not move in self.get_moves(board):
             print("Invalid Move!")
