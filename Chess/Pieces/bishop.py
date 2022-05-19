@@ -13,6 +13,8 @@ class Bishop(Piece):
         for direction in directions:
             for i in range(1, 8):
                 move = self.position + i * direction
+                if move < 0 or move > 63:
+                    continue
                 if not self.is_same_diagonal(move, i):
                     break
                 if move  < 0:

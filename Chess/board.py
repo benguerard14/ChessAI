@@ -7,6 +7,7 @@ from Chess.Pieces.queen import *
 from Chess.Pieces.knight import *
 from Chess.Pieces.rook import *
 
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
 normal_setup = ["r", "n", "b", "q", "k", "b", "n", "r",
                 "p", "p", "p", "p", "p", "p", "p", "p",
@@ -52,3 +53,6 @@ def class_to_string(board):
 def print_board(board):
     str_board = np.array(class_to_string(board))
     print(np.resize(str_board, (8, 8)))
+
+def pos_to_num(pos):
+    return int(alphabet.index(pos[0]))+ (8 - ((int(pos[1])))) * 8  

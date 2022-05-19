@@ -12,7 +12,7 @@ class Knight(Piece):
         directions = [15, 17, 10, 6, -6, -10, -17, -15] 
         for direction in directions:
             move = self.position + direction
-            if (not self.is_same_diagonal(move, 1) and direction % 2 == 1) or move < 0:
+            if (not self.is_same_diagonal(move, 1) and direction % 2 == 1) or move < 0 or move > 63:
                 continue 
             if not (self.is_same_y or (direction != 1 or direction != -1)) and direction % 2 == 0:
                 continue 
