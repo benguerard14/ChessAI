@@ -56,3 +56,32 @@ def print_board(board):
 
 def pos_to_num(pos):
     return int(alphabet.index(pos[0]))+ (8 - ((int(pos[1])))) * 8  
+
+def return_values(board):
+    white_value = 0
+    black_value = 0
+    for piece in board:
+        if piece == None:
+            continue
+        elif piece.color == -1:
+            white_value += piece.value
+            continue
+        black_value += piece.value
+    return [white_value, black_value]
+
+def get_pieces(board, color):
+    pieces = []
+    for piece in board:
+        if piece == None:
+            continue
+        if piece.color == color:
+            pieces.append(piece)
+    return pieces 
+
+def game_state(board):
+    values = return_values(board)
+    if values[0] < 38:
+        return -1 
+    if values[1] < 38:
+        return 1
+    return 0

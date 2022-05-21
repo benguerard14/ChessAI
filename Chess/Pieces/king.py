@@ -12,6 +12,8 @@ class King(Piece):
         directions = [1, -1, 8, -8, 9, -9, 7, -7]
         for direction in directions:
             move = self.position + direction
+            if move < 0 or move > 63:
+                continue
             if (not self.is_same_diagonal(move, 1) and direction % 2 == 1) or move < 0:
                 continue 
             if not (self.is_same_y or (direction != 1 or direction != -1)) and direction % 2 == 0:
