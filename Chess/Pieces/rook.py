@@ -13,6 +13,8 @@ class Rook(Piece):
         for direction in directions:
             for i in range(1, 8):
                 move = self.position + i * direction
+                if move < 0 or move > 63:
+                    break
                 if not (self.is_same_x(move) or self.is_same_y(move)) or move < 0: 
                     break
                 if board[self.position + i * direction] is None:

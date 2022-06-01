@@ -57,6 +57,9 @@ def print_board(board):
 def pos_to_num(pos):
     return int(alphabet.index(pos[0]))+ (8 - ((int(pos[1])))) * 8  
 
+def num_to_pos(num):
+    return alphabet[num % 8] + str(8 - (num // 8))
+
 def return_values(board):
     white_value = 0
     black_value = 0
@@ -71,6 +74,8 @@ def return_values(board):
 
 def get_pieces(board, color):
     pieces = []
+    if not color:
+        color = -1
     for piece in board:
         if piece == None:
             continue

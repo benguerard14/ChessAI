@@ -14,6 +14,8 @@ class Queen(Piece):
         for direction in directions:
             for i in range(1, 8):
                 move = self.position + i * direction
+                if move < 0 or move > 63:
+                    break
                 if (not self.is_same_diagonal(move, i) and direction % 2 == 1) or move < 0:
                     break
                 if not (self.is_same_y or (direction != 1 or direction != -1)) and direction % 2 == 0:
