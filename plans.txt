@@ -1,0 +1,4 @@
+1. I need to check all possible moves
+2. For each of these possible moves I check until we reach a leaf node
+3. When reaching the leaf node of a the tree under, I need to set alpha or beta to the chosen value whether is_maximizing is true or not
+4. If the beta is bigger than the alpha, stop the evaluation and go up the tree
